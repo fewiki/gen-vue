@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 
-var fs = require("fs")
-// 导入路由
-const routes = require('./gen-file/config/routes')
+const fs = require("fs")
 // 导入文件方法
-const MkDir = require('./gen-file/mkDir')
+const Utils = require("../gen-file/utils")
+const Router = require("../gen-file/routes")
+const FileComs = require("../gen-file/file-coms")
+// 导入路由
+if(Utils.getQuery('-router')) {
+   Router.genRouterFile()
+} 
+else if(Utils.getQuery('-com')) { // 生成 单文件
+   FileComs.createSingle(Utils.getQuery('-com'))
+} 
+else if(Utils.getQuery('-coms')) { // 生成 多文件
+    FileComs.createMulti(Utils.getQuery('-coms'))
+} 
+else {
+    console.log('Hello world ^_^, 请传入传数使用')
+}
 
-fs.readFile('./template/vue-single.vue', 'utf8', function (err, tpl) {
-    if (err) {
-      return console.error(err);
-    }
-
-    // 打印目录树
-    MkDir.dirTree(routes)
-
-    // 创建文件夹
-    MkDir.dirCreate(routes,'',  tpl)
-});

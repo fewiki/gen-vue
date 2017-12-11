@@ -9,8 +9,7 @@ module.exports = {
    dirCreate: function (mkDir, path, tpl) {
     var self = this
 
-    var rootPath = 'gen-pages/' // 生成文件存放目录
-    var valTpl = tpl?tpl:valTpl
+    var rootPath = '' // 生成文件存放目录
     for (var i = 0; i < mkDir.length; i++) {
       var name = mkDir[i].name
       var child = mkDir[i].children
@@ -24,11 +23,11 @@ module.exports = {
               return console.error(err)
             }
             if (child) { /*判断文件or文件夹 --- 文件夹*/
-              self.dirCreate(child, path) /*递归*/
+              self.dirCreate(child, path, tpl) /*递归*/
             }
 
              (function (filePath) { // 创建文件
-               fs.appendFile(rootPath + filePath + '/' + name +'.vue', valTpl, 'utf8', function (err) {
+               fs.appendFile(rootPath + filePath + '/' + name +'.vue', tpl, 'utf8', function (err) {
                   if (err) {
                      return console.error(err)
                   }
@@ -75,6 +74,7 @@ module.exports = {
 
    /*异步过程界面化*/
   dirTree: function (mkDir) {
+    console.log("mkDir:", mkDir)
     this.dirSum(mkDir)
       console.log('\x1B[32m' + 'All package installed ' + this.data.sum + ' folder installed from ' + __dirname + '\x1B[39m')
       console.log('\x1B[35m' + 'Project catalogue:' + '\x1B[39m')

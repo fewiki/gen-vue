@@ -1,6 +1,6 @@
 {
   "name": "gen-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "generate vue template",
   "author": "lgzhang <zhanglg@tfedu.net>",
   "main": "src/index.js",
@@ -8,10 +8,8 @@
   "bin": {
     "gen-vue": "bin/gen-vue"
   },
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
@@ -27,5 +25,7 @@
   "bugs": {
     "url": "https://github.com/fewiki/gen-vue/issues"
   },
-  "homepage": "https://github.com/fewiki/gen-vue#readme"
+  "homepage": "https://github.com/fewiki/gen-vue#readme",
+  "_from": "gen-vue@0.0.4",
+  "_resolved": "http://registry.npm.taobao.org/gen-vue/download/gen-vue-0.0.4.tgz"
 }
