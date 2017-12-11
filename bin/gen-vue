@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require("fs")
 // 导入路由
 const routes = require('./gen-file/config/routes')
@@ -15,4 +17,3 @@ fs.readFile('./template/vue-single.vue', 'utf8', function (err, tpl) {
     // 创建文件夹
     MkDir.dirCreate(routes,'',  tpl)
 });
-

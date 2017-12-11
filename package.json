@@ -1,21 +1,31 @@
 {
   "name": "gen-vue",
-  "version": "0.0.1",
-  "description": "gen-vue",
+  "version": "0.0.3",
+  "description": "generate vue template",
   "author": "lgzhang <zhanglg@tfedu.net>",
-  "private": true,
-  "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "node build/build.js"
+  "main": "src/index.js",
+  "private": false,
+  "bin": {
+    "gen-vue": "bin/gen-vue"
   },
   "dependencies": {
-  
   },
   "devDependencies": {
-   
   },
   "engines": {
-    "node": ">= 6.0.0",
+    "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fewiki/gen-vue.git"
+  },
+  "keywords": [
+    "we-ui"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fewiki/gen-vue/issues"
+  },
+  "homepage": "https://github.com/fewiki/gen-vue#readme"
 }
